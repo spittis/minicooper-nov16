@@ -12,6 +12,29 @@ body {
 	color:white;
 }
 
+.hidden
+{
+	display: none;
+}
+
+.preloader-wrapper
+{
+	width: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	text-align: center;
+	background-color: rgba(255, 255, 255, 0.9);
+	border-radius: 3px;
+	overflow: hidden;
+}
+
+.preloader 
+{
+	width: 35%;
+	margin: 0 auto;
+}
+
 h1, h2, h3, h4, h5 { color:white; font-family:'MiniFont', arial, helvetica; }
 
 .topNav {
