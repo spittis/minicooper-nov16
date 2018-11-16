@@ -1,0 +1,87 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML5 APIs - Master</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/overrides.css">
+    <script src="js/vendor/modernizr.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+
+    <main id="app">
+  <!-- top nav -> not functional yet -->
+     <header class="topNav">
+      <nav>
+        <img src="images/logo-s.png" alt="mini logo" class="left">
+        <ul class="no-bullet inline-list">
+          <li>MODELS<img class="right chevron" src="images/down-arrow.png" alt="model arrow"></li>
+          <li>SHOPPING TOOLS<img class="right chevron" src="images/down-arrow.png" alt="shopping arrow"></li>
+          <li>DISCOVER<img class="right chevron" src="images/down-arrow.png" alt="discover arrow"></li>
+          <li>OWNERS<img class="right chevron" src="images/down-arrow.png" alt="owners arrow"></li>
+        </ul>
+        <div class="global-nav-item right findDealer"><i class="fa fa-map-marker"></i>find a dealer</div>
+      </nav>
+    </header>
+
+    <!-- thumbnail images -->
+    <div class="row car-thumbs">
+      <div class="small-6 columns">
+        <h4 class="subhead">SELECT YOUR MODEL :<span>&nbsp;</span></h4>
+        <div class="thumbInfo">
+
+          <!-- ===== USE THESE IMG ELEMENTS (hint - an attribute is key) TO RETRIEVE THE DATA === --> <!--these are the thumb nails-->
+          <img v-on:click="fetchData" class="data-ref" src="images/F55.jpg" alt="blue mini" id="F55" data-roundaboutindex="0"> <!--ids match model number and pass in whatever we click in-->
+          <img v-on:click="fetchData" class="data-ref" src="images/F56.jpg" alt="yellow mini" id="F56" data-roundaboutindex="1">
+          <img v-on:click="fetchData" class="data-ref" src="images/R57.jpg" alt="convertible mini" id="R58" data-roundaboutindex="2">
+
+        </div>
+        <hr>
+        <!-- social media icons / save to localstorage -->
+        <div class="socialIcons">
+          <span class="right"><i class="fa fa-refresh"></i></span>
+          <ul class="inline-list">
+            <li><i class="fa fa-download"></i>Save selection</li>
+            <li><i class="fa fa-facebook-official has-tip" data-tooltip aria-haspopup="true" title="Post this"></i></li>
+            <li><i class="fa fa-pinterest-p has-tip" data-tooltip aria-haspopup="true" title="pin this"></i></li>
+            <li><i class="fa fa-thumbs-up has-tip" data-tooltip aria-haspopup="true" title="Like this"></i></li>
+            <li><i class="fa fa-twitter has-tip" data-tooltip aria-haspopup="true" title="Tweet this"></i></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- model info block  -->
+
+      <!-- ==== POPULATE THESE ELEMENTS WITH THE QUERY RESULT === -->
+      <div class="small-6 columns modelInfo">
+          <h4 class="modelName">{{ modelname }}</h4>
+          <p class="pricing">{{ modelpricing }}</p>
+          <p class="modelDetails">{{ modeldetails }}</p>
+      </div>
+    </div> <!-- end model info / thumbs -->
+    <hr>
+
+    <div class="row"><!-- footer div -->
+      <footer class="small-12 columns">
+        <!-- show the request state => temp -->
+        <h1 class="request-state"></h1>
+      </footer>
+    </div>
+
+
+  </main>
+
+
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+    <!-- <script src="js/carData.js"></script> -->
+    <script src="js/master.js"></script>
+  </body>
+</html>
